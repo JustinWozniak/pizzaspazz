@@ -1,5 +1,3 @@
-import firebase from '../../firebase/firebase'
-
 import * as actionTypes from './actionTypes'
 
 import { firestore } from 'firebase'; 

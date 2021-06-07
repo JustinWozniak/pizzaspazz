@@ -26,7 +26,7 @@ function Orders(props) {
             updateOrder(user.uid)
         }
         return () => clearOrders()
-    }, [])
+    }, [clearOrders, updateOrder, user])
 
     const observer = useRef()
     const lastOrderRef = useCallback((node) => {
@@ -38,7 +38,7 @@ function Orders(props) {
             }
         })
         if (node) { observer.current.observe(node) }
-    }, [isLoading, hasMore])
+    }, [isLoading, hasMore, props])
 
     const items = props.orders.length
     const display = props.orders.map((order, index) => {
